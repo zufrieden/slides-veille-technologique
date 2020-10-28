@@ -342,7 +342,7 @@ mark:before {
   padding: 0 0.15em; }
 
 #ikigai {
-  width: 85%; }
+  width: 50vh; }
   #ikigai path {
     stroke: #2a2734;
     stroke-width: .5; }
