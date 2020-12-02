@@ -8,6 +8,8 @@
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
 		<link rel="stylesheet" href="dist/theme/zufrieden.css" id="theme">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="css/monokai.css">		
 	</head>
 	<body>
 		<svg xmlns="//www.w3.org/2000/svg" version="1.1" class="svg-filters" style="display:none;">
@@ -1349,10 +1351,10 @@
 										✅ Le domaine et relation avec l'Ikigai, ainsi que les taxonomies sont expliqués sur une page <strong>À propos</strong>
 									</p>
 									<p>
-										✅ Les 5 articles sont en relation avec le domaine
+										✅ Les 5 articles sont en relation avec le domaine (dont 1 sur une expérimentation)
 									</p>
 									<p>
-										✅ Le contenu des articles cite la/les sources et explique en quoi ils sont intéressants pour vous
+										✅ Le contenu des articles cite la/les sources et explique en quoi ils sont intéressants pour vous et votre domaine
 									</p>																				
 								</td>
 							</tr>
@@ -1796,7 +1798,114 @@
 						</ul>
 					</section>					
 				</section>
-				
+				<section>
+					<section  data-background-color="#2d62ad">	
+						<h2>Hello again</h2>
+						<aside class="notes">
+							<p>Comment ça va ce matin ?</p>
+						</aside>
+					</section>
+					<section>
+						<h1>🔇</h1>
+						<aside class="notes">
+							Je vais perde ma voix (si ce n'est pas déjà la cas)<br/>
+							Victime d'un virus, mais pas le COVID (selon le test)
+						</aside>
+					</section>
+					<section>
+						<h3>Notre objectif aujourd'hui</h3>
+						<ul>
+							<li>Mise en place Hosting Github + Actions</li>
+							<li>Expérimentation</li>
+							<li>Suite rédaction des articles</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Hosting GitHub</h2>
+						<p>
+							Documentation complète 
+							<a href="https://pages.github.com/">pages.github.com</a>
+						</p>							
+					</section>
+					<section data-background-image="src/veille_github_actions_1.png" data-background-size="contain">
+						<aside class="notes"></aside>
+					</section>
+					<section data-background-image="src/veille_github_actions_2.png" data-background-size="contain">
+						<aside class="notes"></aside>
+					</section>
+					<section data-background-image="src/veille_github_actions_3.png" data-background-size="contain">
+						<aside class="notes"></aside>
+					</section>
+					<section data-background-image="src/veille_github_actions_4.png" data-background-size="contain">
+						<aside class="notes"></aside>
+					</section>
+					<section>
+						<h3>Actions Hugo</h3>
+						<p>
+							<a href="https://github.com/peaceiris/actions-hugo">github.com/peaceiris/actions-hugo</a>	
+						</p>
+						<p>
+							<mark>
+								.github/workflows/gh-pages.yml
+							</mark>
+						</p>
+					</section>					
+					<section>
+						<pre><code>
+name: github pages
+
+on:
+  push:
+	branches:
+	  - main  # Set a branch to deploy
+
+...
+						</code></pre>
+					</section>
+				<section>
+					<pre><code>
+...
+
+jobs:
+	deploy:
+		runs-on: ubuntu-18.04
+		steps:
+			- uses: actions/checkout@v2
+				with:
+				  submodules: true 
+				  fetch-depth: 0
+
+			- name: Setup Hugo
+				uses: peaceiris/actions-hugo@v2
+				with:
+					hugo-version: 'latest'
+
+...
+					</code></pre>
+				</section>
+				<section>
+					<pre><code>
+...
+
+- name: Build
+	run: hugo --minify
+
+- name: Deploy
+	uses: peaceiris/actions-gh-pages@v3
+	with:
+		github_token: ${{ secrets.GITHUB_TOKEN }}
+		publish_dir: ./public%  
+					</code></pre>
+				</section>		
+				<section>
+					<h1>🚧</h1>
+					<h2>Exercice pratique nº8</h2>
+					<p>30 min</p>
+					<ul>
+						<li>Mettre en place le déploiement sur une <mark>gh-pages</mark></li>
+					</ul>
+				</section>									
+				</section>
 				<!-- ## 💡Exploitation -->
 				<!-- Expérimenter, retrouver l'information -->
 				<section>
@@ -1805,6 +1914,68 @@
 							<span class="step-icon">💡</span><br/>
 							Exploitation
 						</h2>
+						<aside class="notes">
+							Comment la veille est exploitée, et comment valoriser les informations au quotidien.
+						</aside>
+					</section>
+					<section>
+						<h3>Expérimentation</h3>
+						<ol class="steps">
+							<li class="fragment fade-up">
+								<h2 style="text-align:center;">	
+								<span class="step-icon">⛑</span>
+								<strong class="step-name">Prototype</strong>
+								</h2>
+							</li>
+							<li class="fragment fade-up">
+								<h2 style="text-align:center;">	
+								<span class="step-icon">🎩</span>
+								<strong class="step-name">Vrais&nbsp;projets</strong>
+								</h2>
+							</li>
+							<li class="fragment fade-up">
+								<h2 style="text-align:center;">	
+								<span class="step-icon">🧰</span>
+								<strong class="step-name">Lessons&nbsp;apprises</strong>
+								</h2>
+							</li>
+						</ul>
+						<aside class="notes">
+							<p>
+								Plusieurs terrains d'expérimentation pour des nouvelles technologies.<br/><br/>
+								Sous forme de prototype pour éprouver la méthode, tester les limites, être sûr que l'on a bien compris les usages.<br/><br/>
+								Ou directement dans de vrais projets. Méthode périlleuse mais vraiment plus formatrice. (expliquer les origines d'Antistatique, méthode : chaque projet une nouvelle technologie, puis en étant honnête avec les clients)<br/><br/>
+								Importance de noter les lessons apprises dans l'expérimentation
+							</p>
+						</aside>
+					</section>
+					<section>
+						<h1>🧰</h1>
+						<ul>
+							<li class="fragment fade-up">Sujet et objectifs de l'expérience</li>
+							<li class="fragment fade-up">Résultat attendu, résultat obtenu</li>
+							<li class="fragment fade-up">Point d'apprentissage</li>
+							<li class="fragment fade-up">Idées/exemples d'application de la méthode</li>
+						</ul>
+						<aside class="notes">
+							<p>L'article à rédiger représente justement les lessons apprises lors de l'expérimentation.</p>
+							<p>Pourquoi avoir choisi ce sujet d'expérimentation</p>
+							<p>Qu'attendiez-vous avant de commencer, est-ce que le résultat est là</p>
+							<p>Qu'avez-vous appris concrètement ?</p>
+							<p>En faisant, d'autres applications de cette technologie/pratique vous sont venus à l'idée ?</p>
+						</aside>
+					</section>
+					<section>
+						<h1>🚧</h1>
+						<h2>Exercice pratique nº9</h2>
+						<p>Jusqu'à la fin du cours</p>
+						<ul>
+							<li>Création d'un prototype pour expérimenter</li>
+							<li>Rédaction de l'article "lesson apprise"</li>
+						</ul>
+					</section>						
+					<section>
+						
 					</section>
 				</section>
 				
