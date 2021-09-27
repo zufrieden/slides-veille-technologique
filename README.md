@@ -2,7 +2,49 @@
 
 - Slides : [zufrieden.io/slides-veille-technologique/](https://zufrieden.io/slides-veille-technologique/)
 
-## Rendu du cours
+## Installation
+
+Some reveal.js features, like external markdown and speaker notes, require that presentations run from a local web server. The following instructions will set up such a server as well as all of the development tasks needed to make edits to the reveal.js source code.
+
+1. Clone this repository
+
+2. Install dependencies
+   ```
+ $ npm install
+   ```
+
+3. Serve the presentation and monitor source files for changes
+   ```
+   npm start -- --port=1234
+   ```
+
+4. Open <http://localhost:1234> to view your presentation
+
+## Rendu du cours edition 2021 - T102 - M48
+
+- Baur Ophélie
+- Boumasmoud Yousra
+- Bourqui Jeremy
+- Crettaz Kilian
+- Fourel Nathan
+- Luyet Jessica
+- Mertenat Martin
+- Mettraux Steve
+- Najjar Louka
+- Paiva Oliveira Kevin
+- Perroset Jade
+- Pouly Laurie
+- Robert Thomas
+- Roulet Alexandre
+- Ruffieux Mikaël
+- Schaller Camille
+- Urfer Lionel
+- Vestergaard Mikkel
+- Walpen Alison
+- Zweifel Nathan
+- Zweifel Robin
+
+## Rendu du cours edition 2020 - T153 - M47
 
 | Nom                              | Article 1     | Article 2     | Article 3     | Article 4     | Article 5     | A propos      |       |
 | -------------------------------- |:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:| -----:|
